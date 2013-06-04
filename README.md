@@ -76,11 +76,15 @@ Analyze French and Japanese
 
 Post documents
 
-  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_en.json 
-  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_de.json 
-  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_fr.json 
-  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_ar.json 
-  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_ja.json 
+  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_en.json
+
+  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_de.json
+
+  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_fr.json
+
+  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_ar.json
+
+  $ curl -XPOST 'http://localhost:9200/wiki/article' -d @test_ja.json
 
 
 Search for Shinjuku
