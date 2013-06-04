@@ -1,7 +1,7 @@
 Berlin Buzzwords 2013 - linguistics-demo
 ========================================
 
-Demo examples for linguistics in Lucene and Solr
+Demo examples for linguistics in Lucene, Solr, ElasticSearch and OpenNLP.
 
 The demo consists of the following modules:
 
@@ -16,8 +16,8 @@ Each example demo can be run as described below.
 lucene-analyzer-example
 -----------------------
 
-The Lucene analyzer example consists of two demos,
-AnalyzerExampleTest and FrenchSynonymExampleTest.
+The Lucene analyzer example consists of two demos, AnalyzerExampleTest
+and FrenchSynonymExampleTest.
 
 Run both demos with mvn test.
 
@@ -33,9 +33,9 @@ The demos can be run individually as well. For example:
 opennlp-example
 ---------------
 
-The OpenNLP example consists of examples demonstrating 
-sentence segmentation, tokenization, person name extraction 
-as well as part-of-speech tagging.
+The OpenNLP example consists of examples demonstrating sentence
+segmentation, tokenization, person name extraction as well as
+part-of-speech tagging.
 
 Execute the following commands to run the examples.
 
@@ -47,8 +47,8 @@ Execute the following commands to run the examples.
 elasticsearch-multilang-example
 -------------------------------
 
-The ElasticSearch multilangauge example demonstrates how
-to do basic multilanguage analysis with ElasticSearch
+The ElasticSearch multilangauge example demonstrates how to do basic
+multilanguage analysis with ElasticSearch
 
 Download and unpack ElasticSearch (We are using 0.90.1 in this example)
 
@@ -92,9 +92,9 @@ Search for Shinjuku
 solr-multilang-example
 ----------------------
 
-The Solr multilanguage example demonstrates how language
-can be detected automatically based on content in fields
-title and body of Wikipedia documents.
+The Solr multilanguage example demonstrates how language can be
+detected automatically based on content in fields title and body of
+Wikipedia documents.
 
 Download and unpack Solr (we are using 4.3.0 in this example)
 
@@ -102,8 +102,8 @@ Download and unpack Solr (we are using 4.3.0 in this example)
 
   $ tar zxvf solr-4.3.0.tgz
 
-Copy the demo schema.xml and solrconfig.xml to Solr's
-example config as follows
+Copy the demo schema.xml and solrconfig.xml to Solr's example config
+as follows
 
   $ cp cp conf/schema.xml \
        conf/solrconfig.xml \
@@ -119,8 +119,8 @@ In a different directory, post the Wikipedia documents
 
   $ ./posh.sh
 
-The below query gives an overview of the documents now
-searchable from the various Wikipedia language editions
+The below query gives an overview of the documents now searchable from
+the various Wikipedia language editions
 
   $ curl 'http://localhost:8983/solr/collection1/select?q=*%3A*&rows=0&wt=xml&indent=true&facet=true&facet.field=wiki
 
