@@ -1,0 +1,28 @@
+{
+	"mappings" : {
+		"article" : {
+			"_analyzer" : {
+				"path" : "lang"
+			},
+			"properties" : {
+				"title": { "type": "string", "index": "analyzed" },
+				"body": { "type": "string", "index": "analyzed" },
+				"wiki": { "type": "string", "index": "not_analyzed" },
+				"lang:": { "type": "string", "index": "not_analyzed" }
+			}
+		}
+	},
+	"settings" : {
+    	"index" : {
+			"analysis": {
+				"analyzer": {
+					"japanese": {
+						"type": "custom",
+						"tokenizer": "kuromoji_tokenizer",
+						"filter": ["lowercase"]
+					}
+				}
+			}
+		}
+	}
+}

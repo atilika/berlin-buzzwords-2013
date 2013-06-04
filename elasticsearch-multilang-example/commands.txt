@@ -1,0 +1,28 @@
+
+# Delete index
+curl -XDELETE 'localhost:9200/wiki'
+
+# Create index with mappings
+curl -XPUT 'localhost:9200/wiki' -d @mappings.json
+
+
+
+# Analyze French
+curl -XGET 'http://localhost:9200/wiki/_analyze?analyzer=french&pretty' -d "Le champagne est un vin pétillant français protégé appelation d'origine contrôlée."
+
+# Analyze Japanese
+curl -XGET 'http://localhost:9200/wiki/_analyze?analyzer=japanese&pretty' -d 'ＪＲ新宿駅の近くにビールを飲みに行こうか？'
+
+
+# Post documents
+curl -XPOST 'http://localhost:9200/wiki/article' -d @test_en.json 
+curl -XPOST 'http://localhost:9200/wiki/article' -d @test_de.json 
+curl -XPOST 'http://localhost:9200/wiki/article' -d @test_fr.json 
+curl -XPOST 'http://localhost:9200/wiki/article' -d @test_ar.json 
+curl -XPOST 'http://localhost:9200/wiki/article' -d @test_ja.json 
+
+
+# Search
+curl -XGET 'http://localhost:9200/wiki/article/_search?pretty' \
+    -d '{ "query" : { "match" : { "body" : { "query" : "新宿", "analyzer" : "japanese" } } } }' 
+
